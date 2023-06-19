@@ -1,0 +1,2 @@
+ttkbootstrap~=1.10.1
+py2exe~=0.13.0.0

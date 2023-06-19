@@ -2,8 +2,6 @@ import os
 import tkinter as tk
 from tkinter import filedialog, messagebox, simpledialog
 import subprocess
-from ttkbootstrap.constants import *
-import ttkbootstrap as ttk
 
 
 def select_folder():
@@ -95,41 +93,40 @@ def initialize_github_repository():
         messagebox.showerror('Error', 'Failed to initialize local repository.')
 
 
-root = ttk.Window(themename='darkly')
-root.geometry("800x600")
+root = tk.Tk()
 root.title("Git GUI")
 
-folder_label = ttk.Label(root, text="Carpeta:")
+folder_label = tk.Label(root, text="Carpeta:")
 folder_label.pack(padx=5, pady=5)
 
-folder_entry = ttk.Entry(root, width=50)
+folder_entry = tk.Entry(root, width=50)
 folder_entry.pack(padx=5, pady=5)
 
-select_button = ttk.Button(root, text="Examinar", command=select_folder)
+select_button = tk.Button(root, text="Examinar", command=select_folder)
 select_button.pack(padx=5, pady=5)
 
-init_button = ttk.Button(root, text="Inicializar Git", command=initialize_git)
+init_button = tk.Button(root, text="Inicializar Git", command=initialize_git)
 init_button.pack(padx=5, pady=5)
 
-add_button = ttk.Button(root, text="Agregar al Commit", command=add_files)
+add_button = tk.Button(root, text="Agregar al Commit", command=add_files)
 add_button.pack(padx=5, pady=5)
 
-commit_button = ttk.Button(root, text="Realizar Commit", command=commit_files)
+commit_button = tk.Button(root, text="Realizar Commit", command=commit_files)
 commit_button.pack(padx=5, pady=5)
 
-graph_button = ttk.Button(root, text="Cerrar", command=root.destroy)
+graph_button = tk.Button(root, text="Cerrar", command=root.destroy)
 graph_button.pack(padx=5, pady=5)
 
 github_user_button = tk.Button(root, text='Enter GitHub Username', command=enter_github_username)
 github_user_button.pack(padx=5, pady=5)
 
-email_button = ttk.Button(root, text='Enter GitHub Email', command=enter_email)
+email_button = tk.Button(root, text='Enter GitHub Email', command=enter_email)
 email_button.pack(padx=5, pady=5)
 
-entry = ttk.Entry(root)
+entry = tk.Entry(root)
 entry.pack(padx=5, pady=5)
 
-init_button = ttk.Button(root, text='Initialize GitHub Repository', command=initialize_github_repository)
+init_button = tk.Button(root, text='Initialize GitHub Repository', command=initialize_github_repository)
 init_button.pack(padx=5, pady=5)
 
 output_text = tk.Text(root, height=10)
